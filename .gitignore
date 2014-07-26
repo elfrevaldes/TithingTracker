@@ -1,0 +1,33 @@
+# Third-party libraries will be retrieved online as needed.
+lib
+build
+*.class
+*~
+*#
+CodeVerifier.java
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.xml
+*.mf
+
+# For NetBeans
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+#nbactions.xml
+#nb-configuration.xml
+
+# For Eclipse/Android
+.classpath
+.project
+bin
+gen
+libs
+res
+project.properties
+proguard.cfg
