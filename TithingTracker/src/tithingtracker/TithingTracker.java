@@ -50,7 +50,3 @@ public class TithingTracker extends Application {
     }
     
 }
-
-/*
-* I made a few changes
-*/
