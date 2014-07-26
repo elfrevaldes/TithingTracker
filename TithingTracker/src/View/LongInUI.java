@@ -9,9 +9,11 @@ package View;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
@@ -22,6 +24,17 @@ public class LongInUI extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+        // This is so that you have access to the screen properties
+        Screen screen = Screen.getPrimary();
+        Rectangle2D screenBounds = screen.getVisualBounds();
+     
+        // This is to set the screen size
+        primaryStage.setX(screenBounds.getMinX());
+        primaryStage.setY(screenBounds.getMinY());
+        primaryStage.setHeight(screenBounds.getHeight());
+        primaryStage.setWidth(screenBounds.getWidth());
+        
+        
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -35,7 +48,7 @@ public class LongInUI extends Application {
         StackPane root = new StackPane();
         root.getChildren().add(btn);
         
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root, 500, 250);
         
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
