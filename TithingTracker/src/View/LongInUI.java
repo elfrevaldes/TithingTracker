@@ -71,11 +71,11 @@ public class LongInUI extends Application {
         Label userLabel = new Label("User Name:");
         TextField usernameField = new TextField();
         pane.add(userLabel, 0, 0);
-        pane.add(usernameField, 0, 1);
+        pane.add(usernameField, 1, 0);
         
         Label passwordLabel = new Label("Password:");
         TextField passwordField = new TextField();
-        pane.add(passwordLabel, 1, 0);
+        pane.add(passwordLabel, 0, 1);
         pane.add(passwordField, 1, 1);
         
         //The user signs up by pressing this button
@@ -88,6 +88,13 @@ public class LongInUI extends Application {
                   errorMessageText.setText("Sign Up Pressed");
             }
         });
+        //          object, Column, Row
+        /*
+        *Sign up button isn't moving here!
+        *
+        ********/
+        
+        pane.add(signUpButton, 1, 3);
         
         // The box allows me to position the button left, center or right
         HBox boxForSignUpButton = new HBox();
@@ -111,7 +118,7 @@ public class LongInUI extends Application {
         HBox mainBoxForButtons = new HBox();
         mainBoxForButtons.setAlignment(Pos.BASELINE_RIGHT);
         // setting padding
-        mainBoxForButtons.setSpacing(10);
+        mainBoxForButtons.setSpacing(20);
         
         HBox boxForLoginButton  = new HBox();
         boxForLoginButton.setAlignment(Pos.BASELINE_RIGHT);
@@ -124,7 +131,7 @@ public class LongInUI extends Application {
         mainBoxForButtons.getChildren().addAll(boxForSignUpButton, boxForLoginButton);
         
         //          object, Column, Row
-        pane.add(mainBoxForButtons, 1, 3);
+        pane.add(mainBoxForButtons, 0, 3);
         
         root.getChildren().add(pane);
         
